@@ -5,23 +5,23 @@ import 'server-only'
 const username = process.env.GH_USERNAME || 'idabagusputra'
 const repositoriesUrl = `https://api.github.com/users/${username}/repos?sort=updated&visibility=public&affiliation=owner`
 
-const fetchOptions: RequestInit = {
-  method: 'GET',
-  headers: {
-    Accept: 'application/vnd.github+json',
-    Authorization: 'Bearer ' + process.env.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,
-    'X-GitHub-Api-Version': '2022-11-28',
-  },
-  next: { revalidate: 0 },
-}
+// const fetchOptions: RequestInit = {
+//   method: 'GET',
+//   headers: {
+//     Accept: 'application/vnd.github+json',
+//     Authorization: 'Bearer ' + process.env.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,
+//     'X-GitHub-Api-Version': '2022-11-28',
+//   },
+//   next: { revalidate: 0 },
+// }
 
 const getProjects = async () => {
-  const repositories = (await fetch(repositoriesUrl, fetchOptions).then((res) => res.json() as Promise<any[]>)).filter(
+  const repositories = (await fetch(repositoriesUrl).then((res) => res.json() as Promise<any[]>)).filter(
     (r) => r.languages_url && r.description,
   )
 
   const promises = repositories.map(async (repo) => {
-    const data = await fetch(repo.languages_url, fetchOptions).then((res) => res.json() as Promise<{ [key: string]: number }>)
+    const data = await fetch(repo.languages_url).then((res) => res.json() as Promise<{ [key: string]: number }>)
     const names = Object.keys(data)
     const languages: { name: string; size: number }[] = []
     let total: number = 0
@@ -33,7 +33,7 @@ const getProjects = async () => {
       })
     }
 
-    const commits = await fetch(`https://api.github.com/repos/${repo.full_name}/commits?per_page=1`, fetchOptions).then(
+    const commits = await fetch(`https://api.github.com/repos/${repo.full_name}/commits?per_page=1`).then(
       (res) => res.json() as Promise<[any]>,
     )
 
