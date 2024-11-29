@@ -101,7 +101,7 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <h2 className="mb-3 mt-3 text-xl font-bold">Technologies I Specialize In</h2>
+            <h2 className="mb-3 mt-5 text-xl font-bold">Technologies I Specialize In</h2>
 
             <div className="mb-6">
               <TechnologiesSection />
