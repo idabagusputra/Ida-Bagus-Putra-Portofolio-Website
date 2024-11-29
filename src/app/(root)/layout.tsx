@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Navigation />
         {children}
         <footer className="pointer-events-none invisible fixed bottom-0 right-0 z-[100] select-none p-3 text-xs md:visible md:p-5 lg:px-10">
-          <p>© {new Date().getFullYear()} Ida Bagus Putu Putra Manuaba. Creating with Dedication, Moving with Inspiration.</p>
+          <p>© {new Date().getFullYear()} Ida Bagus Putu Putra Manuaba. Create. Move. Inspire.</p>
         </footer>
       </div>
     </>
