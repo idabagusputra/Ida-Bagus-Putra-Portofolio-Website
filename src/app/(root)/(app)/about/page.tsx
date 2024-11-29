@@ -14,7 +14,7 @@ const ExperienceTimeline = () => {
     {
       period: 'January 2023 - February 2023',
       description:
-        'Internship at PUSDATIK KEMNAKER, enhancing programming fundamentals and collaborative skills in a government technology environment.',
+        "Internship at Ministry of Manpower's Data and Information Technology Center, enhancing programming fundamentals and collaborative skills in a government technology environment.",
     },
     {
       period: 'October 2023 - September 2024',
