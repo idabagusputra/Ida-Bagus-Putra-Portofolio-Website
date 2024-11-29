@@ -17,6 +17,7 @@
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.1",
     "firebase": "^10.8.0",
+    "git-filter-repo": "^0.0.30",
     "next": "^14.0.2",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",

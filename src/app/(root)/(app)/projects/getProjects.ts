@@ -9,7 +9,7 @@ const fetchOptions: RequestInit = {
   method: 'GET',
   headers: {
     Accept: 'application/vnd.github+json',
-    Authorization: 'Bearer ' + process.env.GH_API_KEY,
+    Authorization: 'Bearer ' + process.env.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,
     'X-GitHub-Api-Version': '2022-11-28',
   },
   next: { revalidate: 0 },
